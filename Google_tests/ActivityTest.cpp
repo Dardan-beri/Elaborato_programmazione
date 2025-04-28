@@ -15,6 +15,12 @@ TEST(ActivityTest, ConstructorValid) {
     EXPECT_EQ(a.getEndTime().getSecond(), 45);
 }
 
+TEST(ActivityTest, ConstructorInvalid) {
+    Time start(12, 30, 45);
+    Time end(11, 30, 45);
+    EXPECT_THROW(Activity a("Title", "Description", start, end), std::invalid_argument);
+}
+
 TEST(ActivityTest, EqualValid){
     Time start(12, 30, 45);
     Time end(13, 30, 45);
