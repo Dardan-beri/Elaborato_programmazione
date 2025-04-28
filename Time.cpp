@@ -61,3 +61,17 @@ void Time::setSecond(int s) {
         throw std::invalid_argument("Second must be between 0 and 59");
     this->second = s;
 }
+
+bool Time::operator>(const Time &other) const {
+    if(this->hour > other.hour)
+        return true;
+    else if(this->hour == other.hour){
+        if(this->minute > other.minute)
+            return true;
+        else if(this->minute == other.minute){
+            if(this->second > other.second)
+                return true;
+        }
+    }
+    return false;
+}

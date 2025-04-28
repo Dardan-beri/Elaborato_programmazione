@@ -16,6 +16,7 @@ public:
     bool operator==(const Time &other) const;
     bool operator!=(const Time &other) const;
     bool operator<(const Time &other) const;
+    bool operator>(const Time &other) const;
 
     int getHour() const { return hour; }
     int getMinute() const { return minute; }
