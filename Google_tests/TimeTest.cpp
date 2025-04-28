@@ -74,3 +74,14 @@ TEST(TimeTest, LessThanOperator) {
     EXPECT_FALSE(t2 < t1);
     EXPECT_FALSE(t3 < t1);
 }
+
+TEST(TimeTest, GreaterThanOperator) {
+    Time t1(12, 30, 45);
+    Time t2(12, 30, 50);
+    Time t3(12, 31, 0);
+
+    EXPECT_FALSE(t1 > t2);
+    EXPECT_FALSE(t1 > t3);
+    EXPECT_TRUE(t2 > t1);
+    EXPECT_TRUE(t3 > t1);
+}
