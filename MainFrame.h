@@ -16,6 +16,9 @@ public:
     bool addDay(const std::string day);
     bool addActivityToDay(const std::string day, const Activity& activity);
     bool removeActivityFromDay(const std::string &day, std::basic_string<char, std::char_traits<char>, std::allocator<char>> title);
+    ActivityLog getActivitiesFromDay(const std::string &day) {
+        return days[day];
+    }
 
 private:
     std::map<std::string, ActivityLog> days;
