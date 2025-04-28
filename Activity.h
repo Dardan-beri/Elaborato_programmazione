@@ -8,7 +8,7 @@
 class Activity {
 
 public:
-    explicit Activity(std::string title, std::string description, Time start, Time end);
+    Activity(std::string title, std::string description, Time start, Time end);
     bool operator==(const Activity &other) const;
     bool operator==(const std::string &title) const;
     bool operator!=(const Activity &other) const;
