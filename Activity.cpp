@@ -6,6 +6,9 @@
 
 Activity::Activity(std::string title, std::string description, Time start, Time end)
         : title(std::move(title)), description(std::move(description)), start(std::move(start)), end(std::move(end)) {
+    if (this->start > this->end) {
+        throw std::invalid_argument("Start time cannot be after end time");
+    }
 }
 
 bool Activity::operator==(const Activity &other) const {
