@@ -25,6 +25,7 @@ TEST(ActivityLogTest, AddActivityInvalid) {
     Activity b("Test", "Another activity", s, e);
     log.addActivity(a);
     EXPECT_FALSE(log.addActivity(b));
+    EXPECT_FALSE(log.addActivity(a));
     EXPECT_EQ(log.getNumberOfActivities(), 1);
 }
 
