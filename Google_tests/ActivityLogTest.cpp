@@ -22,8 +22,9 @@ TEST(ActivityLogTest, AddActivityInvalid) {
     Time s(21, 30);
     Time e(22, 30);
     Activity a("Test", "Test activity", s, e);
+    Activity b("Test", "Another activity", s, e);
     log.addActivity(a);
-    EXPECT_FALSE(log.addActivity(a));
+    EXPECT_FALSE(log.addActivity(b));
     EXPECT_EQ(log.getNumberOfActivities(), 1);
 }
 
